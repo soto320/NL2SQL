@@ -47,7 +47,22 @@ El trabajo se sustenta en el artículo:
   - `uvicorn`  
 
 ---
+## Estructura del Repositorio
 
+```text
+/
+├── data/                    ← Datos y datasets utilizados
+├── requirements/            ← Dependencias del proyecto
+├── src/                     ← Código fuente
+│   ├── train_*.py           ← Scripts de entrenamiento y fine-tuning
+│   ├── api/                 ← API REST (FastAPI)
+│   ├── ui/                  ← Interfaz .NET
+│   ├── security/            ← Módulo de anonimización y validaciones
+│   └── utils/               ← Herramientas auxiliares (evaluación, métricas, etc.)
+├── LICENSE                  ← Licencia Apache 2.0
+└── README.md                ← Este documento
+
+---
 ## 🚀 Instalación
 
 ```bash
