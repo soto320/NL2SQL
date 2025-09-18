@@ -93,4 +93,4 @@ curl -X POST http://localhost:8000/v1/chat/completions \
       }'
 
 ```
-
+👥 Autores y Créditos
