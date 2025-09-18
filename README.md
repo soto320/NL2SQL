@@ -4,57 +4,63 @@
 ![Framework](https://img.shields.io/badge/Framework-FastAPI-red)
 ![Model](https://img.shields.io/badge/Model-Mistral--7B-orange)
 
-## 📌 Descripción General
+## Descripción General
 
-Este proyecto implementa un sistema **NL2SQL (Natural Language to SQL)** seguro y reproducible basado en **modelos de lenguaje abiertos**.  
-El objetivo es traducir **preguntas en Lenguaje Natural (LN) en español** a **consultas SQL válidas y seguras**, con:
+NL2SQL es un sistema basado en **modelos de lenguaje abierto** para traducir preguntas expresadas en Lenguaje Natural al español en **consultas SQL válidas y seguras**. El proyecto enfatiza:
 
-- Adaptación al idioma español (brecha poco abordada en la literatura).  
-- Prevención de ataques **prompt-to-SQL e inyecciones**.  
-- Uso de modelos **open-source** con licencia libre (Apache 2.0, MIT, BigCode).  
-- Reproducibilidad académica y práctica, documentada paso a paso.  
+- Adaptación al idioma español, una necesidad poco atendida en la literatura actual.  
+- Prevención de ataques tipo _prompt-to-SQL_ e inyecciones SQL.  
+- Uso de modelos **open-source** con licencias permisivas (Apache 2.0, MIT, BigCode).  
+- Reproducibilidad académica y práctica, con pasos claramente documentados.
 
-El proyecto fue desarrollado como parte de la **Maestría en Desarrollo de Software** en la **Universidad Politécnica Salesiana (UPS)**.
-
----
-
-## 🎯 Objetivos
-
-- **General:** Desarrollar un sistema NL2SQL seguro, reproducible y adaptado al español.  
-- **Específicos:**  
-  1. Analizar modelos NL2SQL open-source y seleccionar el más adecuado.  
-  2. Implementar una **Prueba de Concepto (PoC)** funcional en GPU.  
-  3. Afinar el modelo con **LoRA** y dataset propio en español.  
-  4. Desarrollar una **API REST con FastAPI** y una interfaz en **.NET**.  
-  5. Evaluar exactitud semántica y sintáctica con métricas estándar.  
-  6. Integrar validación de seguridad y anonimización conforme a **LOPDP** y **GDPR**.  
+Fue desarrollado en el marco de la Maestría en Desarrollo de Software de la Universidad Politécnica Salesiana (UPS).
 
 ---
 
-## 📊 Metodología
+## Objetivos
 
-Se aplicó un **RUP adaptado con enfoque ágil**【21】, estructurado en 4 fases (ver *Figura 1* del artículo):
+**General**  
+Desarrollar un sistema NL2SQL que sea seguro, reproducible y adaptado al español.
 
-1. **Inicio:** Revisión bibliográfica, levantamiento de requisitos y análisis de dominio.  
-   - Se evaluaron modelos NL2SQL (Tabla 1 comparativa: LLaMA-3, Mistral, DeepSeek, Yi, StarCoder2).  
-   - Se priorizó soporte multilingüe, licencia abierta, rendimiento y hardware requerido.  
+**Específicos**
 
-2. **Elaboración:** Diseño de la arquitectura y planificación técnica.  
-   - Arquitectura en capas (ver *Figura 2*): Interfaz .NET + API FastAPI + PostgreSQL + Módulo de anonimización.  
-
-3. **Construcción:** Implementación del modelo NL2SQL.  
-   - Fine-tuning con **LoRA** en dataset propio (50 pares LN→SQL en español, dominio clínico).  
-   - Scripts `train_mistral_lora.py` y validación con métricas de similitud (Jaccard).  
-
-4. **Transición:** Validación, pruebas y documentación.  
-   - Pruebas unitarias y de seguridad (inyecciones bloqueadas).  
-   - Interfaz en .NET probada con consultas clínicas simuladas.  
-   - Documentación reproducible en LaTeX/Word.  
-
-Además, se realizaron **entrevistas estructuradas** (1 responsable de TI, 3 investigadores) y **validación con expertos académicos** (n=2) para retroalimentar requisitos y resultados.
+1. Analizar modelos NL2SQL open-source y seleccionar el más adecuado según criterios lingüísticos, de licencia, rendimiento y requerimientos de hardware.  
+2. Implementar una prueba de concepto (PoC) operativa en entorno GPU.  
+3. Afinar el modelo mediante LoRA usando un dataset propio en español.  
+4. Desarrollar una API REST con FastAPI y una interfaz de usuario en .NET.  
+5. Evaluar la exactitud semántica y sintáctica con métricas estándar (por ej. Jaccard, BLEU, exact match).  
+6. Integrar validaciones de seguridad y anonimización de datos de acuerdo con normativas como LOPDP y GDPR.
 
 ---
 
-## 📂 Estructura del Repositorio
+## Metodología
+
+Se aplicó un **RUP adaptado** con enfoque ágil, estructurado en cuatro fases (ver Figura correspondiente en el artículo):
+
+| Fase     | Actividades principales |
+|----------|-------------------------|
+| **1. Inicio** | Revisión bibliográfica; levantamiento de requisitos; análisis de dominio; comparación de modelos (LLaMA-3, Mistral, DeepSeek, Yi, StarCoder2) considerando soporte multilingüe, licencia, rendimiento y hardware. |
+| **2. Elaboración** | Diseño arquitectónico: capas de interfaz .NET, API con FastAPI, base de datos PostgreSQL, módulo de anonimización. Planificación técnica. |
+| **3. Construcción** | Fine-tuning con LoRA del modelo seleccionado usando dataset clínico propio (LN → SQL en español). Implementación de scripts de entrenamiento y validación. Pruebas de seguridad. |
+| **4. Transición** | Validación del sistema: pruebas funcionales, pruebas de seguridad (ataques/inyecciones), interfaz de usuario. Documentación reproducible y despliegue. |
+
+Además, se obtuvieron retroalimentaciones de expertos y se realizaron entrevistas estructuradas para validar requisitos y resultados.
+
+---
+
+## Estructura del Repositorio
+
+```text
+/
+├── data/                    ← Datos y datasets utilizados
+├── requirements/            ← Dependencias del proyecto
+├── src/                     ← Código fuente
+│   ├── train_*.py           ← Scripts de entrenamiento y fine-tuning
+│   ├── api/                 ← API REST (FastAPI)
+│   ├── ui/                  ← Interfaz .NET
+│   ├── security/            ← Módulo de anonimización y validaciones
+│   └── utils/               ← Herramientas auxiliares (evaluación, métricas, etc.)
+├── LICENSE                  ← Licencia Apache 2.0
+└── README.md                ← Este documento
 
 
