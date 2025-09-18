@@ -75,6 +75,11 @@ python3 -m venv .venv && source .venv/bin/activate
 
 # 3) Instalar dependencias
 pip install -r requirements.txt
+
+# 3) Ejecución
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+python  train_mistral_lora.py
+
 ```
 
 
