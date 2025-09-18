@@ -47,7 +47,7 @@ El trabajo se sustenta en el artículo:
   - `uvicorn`  
 
 ---
-## Estructura del Repositorio
+## 📂 Estructura del Repositorio
 
 ```text
 /
@@ -79,8 +79,18 @@ pip install -r requirements.txt
 # 3) Ejecución
 uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 python  train_mistral_lora.py
+```
+---
+## ▶️ Probar consulta
+```bash
+curl -X POST http://localhost:8000/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+        "model": "nl2sql-mistral7b-es",
+        "messages": [
+          {"role":"user","content":"¿Cuántos pacientes fueron diagnosticados con diabetes en 2024?"}
+        ]
+      }'
 
 ```
-
-
 
