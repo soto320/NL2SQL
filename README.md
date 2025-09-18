@@ -61,7 +61,7 @@ El trabajo se sustenta en el artículo:
 │   └── utils/               ← Herramientas auxiliares (evaluación, métricas, etc.)
 ├── LICENSE                  ← Licencia Apache 2.0
 └── README.md                ← Este documento
-
+```
 ---
 ## 🚀 Instalación
 
@@ -75,7 +75,7 @@ python3 -m venv .venv && source .venv/bin/activate
 
 # 3) Instalar dependencias
 pip install -r requirements.txt
-
+```
 
 
 
