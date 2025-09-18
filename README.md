@@ -4,9 +4,6 @@
 ![Framework](https://img.shields.io/badge/Framework-FastAPI-red)
 ![Model](https://img.shields.io/badge/Model-Mistral--7B-orange)
 
-# NL2SQL — Traducción Segura de Lenguaje Natural a SQL
-
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)]() [![FastAPI](https://img.shields.io/badge/API-FastAPI-009688.svg)]() [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)]()
 
 ## 📖 Descripción General
 
@@ -22,7 +19,6 @@ El trabajo se sustenta en el artículo:
 **“Implementación de Modelos de Inteligencia Artificial Basados en Tecnologías de Código Abierto para la Traducción Segura de Lenguaje Natural a Consultas SQL”** (Saúl, 2025).
 
 ---
-
 ## ✨ Características
 
 - **Modelo base:** [Mistral-7B-Instruct](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1), ajustado con **LoRA** para español.  
@@ -33,7 +29,21 @@ El trabajo se sustenta en el artículo:
 - **Interfaz de prueba:** integración con .NET (C#).  
 
 ---
+## Estructura del Repositorio
 
+```text
+/
+├── data/                    ← Datos y datasets utilizados
+├── requirements/            ← Dependencias del proyecto
+├── src/                     ← Código fuente
+│   ├── train_*.py           ← Scripts de entrenamiento y fine-tuning
+│   ├── api/                 ← API REST (FastAPI)
+│   ├── ui/                  ← Interfaz .NET
+│   ├── security/            ← Módulo de anonimización y validaciones
+│   └── utils/               ← Herramientas auxiliares (evaluación, métricas, etc.)
+├── LICENSE                  ← Licencia Apache 2.0
+└── README.md                ← Este documento
+---
 ## ⚙️ Requisitos del Entorno
 
 ### Hardware recomendado
@@ -67,19 +77,5 @@ python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
 
-## Estructura del Repositorio
-
-```text
-/
-├── data/                    ← Datos y datasets utilizados
-├── requirements/            ← Dependencias del proyecto
-├── src/                     ← Código fuente
-│   ├── train_*.py           ← Scripts de entrenamiento y fine-tuning
-│   ├── api/                 ← API REST (FastAPI)
-│   ├── ui/                  ← Interfaz .NET
-│   ├── security/            ← Módulo de anonimización y validaciones
-│   └── utils/               ← Herramientas auxiliares (evaluación, métricas, etc.)
-├── LICENSE                  ← Licencia Apache 2.0
-└── README.md                ← Este documento
 
 
