@@ -94,3 +94,5 @@ curl -X POST http://localhost:8000/v1/chat/completions \
 
 ```
 👥 Autores y Créditos
+- **SAUL GERMAN GUAMAN GUAMAN**
+- **ING.CRISTIAN TIMBI, MSC.**
